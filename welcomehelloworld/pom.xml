@@ -22,19 +22,21 @@
 			<version>1.2</version>
 		</dependency>
   
-  <dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-core</artifactId>
-			<version>4.2.6.RELEASE</version>
-		</dependency>
+  <!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-core</artifactId>
+    <version>4.3.1.RELEASE</version>
+</dependency>
+
 		
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-aop -->
 <dependency>
     <groupId>org.springframework</groupId>
     <artifactId>spring-aop</artifactId>
-    <version>4.2.6.RELEASE</version>
+    <version>4.3.1.RELEASE</version>
 </dependency>
-		
+
 <dependency>
     <groupId>javax.servlet</groupId>
     <artifactId>jstl</artifactId>
@@ -42,19 +44,23 @@
 </dependency>
 		
  
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-web</artifactId>
-			<version>4.2.6.RELEASE</version>
-		</dependency>
- 
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-web -->
+<!-- https://mvnrepository.com/artifact/org.springframework/spring-web -->
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-web</artifactId>
+    <version>4.3.1.RELEASE</version>
+</dependency>
+
+
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
 <dependency>
     <groupId>org.springframework</groupId>
     <artifactId>spring-webmvc</artifactId>
-    <version>4.2.6.RELEASE</version>
-    <!-- https://mvnrepository.com/artifact/org.springframework/spring-tx -->
+    <version>4.3.1.RELEASE</version>
 </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-tx -->
 <dependency>
     <groupId>org.springframework</groupId>
     <artifactId>spring-tx</artifactId>
@@ -98,19 +104,34 @@
     <version>4.3.1.Final</version>
 </dependency>
 <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
-<dependency>
+<!-- <dependency>
     <groupId>javax.servlet</groupId>
     <artifactId>javax.servlet-api</artifactId>
     <version>4.0.0-b01</version>
-</dependency>
+</dependency> -->
+<!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
 <dependency>
     <groupId>javax.servlet</groupId>
     <artifactId>servlet-api</artifactId>
     <version>2.5</version>
-    <scope>provided</scope>
 </dependency>
+
+
+
+
 </dependencies>
   <build>
     <finalName>welcomehelloworld</finalName>
-  </build>
+    <plugins>
+        <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.1</version>
+        <configuration>
+            <source>1.7</source>
+            <target>1.7</target>
+        </configuration>
+    </plugin>
+    </plugins>
+</build>
 </project>
