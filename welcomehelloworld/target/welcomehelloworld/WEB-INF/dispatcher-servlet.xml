@@ -16,6 +16,7 @@
 		xmlns="http://www.springframework.org/schema/beans">
 
 <mvc:annotation-driven/>
+<tx:annotation-driven/>
 
 <context:component-scan base-package="controllers"/>
 
@@ -30,10 +31,9 @@
 
 </bean>
 
-<mvc:annotation-driven/>
 
-<bean class="Services.productservices" id="ps"/>
+<!-- <bean class="Services.productservicesImpl" id="ps"/>
 
 <bean class="daoimpl.ProductsDAOImpl" id="pdi"/>
-
+ -->
 </beans>
