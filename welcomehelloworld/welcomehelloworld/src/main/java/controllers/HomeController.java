@@ -34,7 +34,7 @@ public class HomeController {
 	
 	@Autowired
 	/*@Qualifier("psi")*/
-	public ProductServicesImpl psi;
+	private ProductServicesImpl psi;
 
 	
 	
@@ -51,8 +51,8 @@ public class HomeController {
 	@RequestMapping(value="/products", method= RequestMethod.GET)
 	public String listProducts(Model Models){
 	Models.addAttribute("products", new Products());
-	Models.addAttribute("listProducts",this.psi.listProducts());
-	return "product";
+	Models.addAttribute("listofProducts",this.psi.listofProducts());
+	return "Product";
 	}
 	@RequestMapping(value="/products/add",method=RequestMethod.POST)
 	public String addProducts(@ModelAttribute("products") Products p){
@@ -61,20 +61,20 @@ public class HomeController {
 		}else {
 			this.psi.updateProducts(p);
 		}
-		return "products";
+		return "redirect:/Demean";
 	}
 	
 	@RequestMapping("/remove/{id}")
 	public String removeProducts(@PathVariable("id")int id){
 		this.psi.removeProducts(id);
-		return "products";
+		return "redirect:/Demean";
 	}
 	
 	@RequestMapping("/edit/{id}")
-	public String editProduct(@PathVariable("id") int id,Model models){
+	public String updateProducts(@PathVariable("id") int id,Model models){
 		models.addAttribute("products",this.psi.getProductsById(id));
-		models.addAttribute("listProducts",this.psi.listProducts());
-		return "products";
+		models.addAttribute("listProducts",this.psi.listofProducts());
+		return "redirect:/Demean";
 	}
 	//ProductsDAOImpl pdi;
 	
@@ -101,6 +101,11 @@ public class HomeController {
 	{
 		return "index";
 	}
+	@RequestMapping("login")
+	public String loadlogin()
+	{
+		return "login";
+	}
 	@RequestMapping("/Demean")
 	public ModelAndView loadDatatable()
 	{
@@ -125,7 +130,7 @@ public class HomeController {
 
 	//@RequestMapping("/Demean")
 	public String loadProducts(){
-		return "Product";
+		return "redirect:/Product";
 	}
 
 

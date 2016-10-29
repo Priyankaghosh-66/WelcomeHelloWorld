@@ -33,7 +33,7 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
 
 <form:form action="${addAction}" commandName="products">
 <table>
-	<c:if test="${!empty products.name}">
+	<c:if test="${!empty product.name}">
 	<tr>
 		<td>
 			<form:label path="id">
@@ -102,11 +102,11 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
 	</tr>
 	<tr>
 		<td colspan="2">
-			<c:if test="${!empty products.name}">
+			<c:if test="${!empty product.name}">
 				<input type="submit"
 					value="<spring:message text="Edit Products"/>" />
 			</c:if>
-			<c:if test="${empty products.name}">
+			<c:if test="${empty product.name}">
 				<input type="submit"
 					value="<spring:message text="Add Products"/>" />
 			</c:if>
@@ -117,26 +117,27 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
 <br>
  <h3>Products List</h3>
 <c:if test="${!empty listofProducts}">
-    <table id="myTable">
+    <table class="tg">
    
 	<tr>
-		<th >Product ID</th>
-		<th >Product CATEGORY</th>
-		<th >Product DESCRIPTION</th>
-		<th >Product NAME</th>
-		<th >Product PRICE</th>
-		<th >Product STATUS</th>
-		<th >Edit</th>
-		<th >Delete</th>
+	
+	    <th width="80">Product ID</th>
+		<th width="100">Product NAME</th>
+		<th width="100">Product STATUS</th>
+		<th width="100">Product DESCRIPTION</th>
+		<th width="80">Product PRICE</th>
+		<th width="100">Product CATEGORY</th>
+		<th width="100">Edit</th>
+		<th width="100">Delete</th>
 	</tr>
 	<c:forEach items="${listofProducts}" var="products">
 		<tr>
 			<td>${products.id}</td>
-			<td>${products.category}</td>
-			<td>${products.description}</td>
 			<td>${products.name}</td>
-			<td>${products.price}</td>
 			<td>${products.status}</td>
+			<td>${products.description}</td>
+			<td>${products.price}</td>
+			<td>${products.category}</td>
 			<td><a href="<c:url value='/edit/${products.id}' />" >Edit</a></td>
 			<td><a href="<c:url value='/remove/${products.id}' />" >Delete</a></td>
 		</tr>
@@ -148,6 +149,6 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
 
 <script>
 $(document).ready(function(){
-    $('#myTable').dataTable();
+    $('#tg').dataTable();
 });
 </script>
