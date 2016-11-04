@@ -52,6 +52,7 @@ public class ProductsDAOImpl {
 			Session session=this.sessionFactory.getCurrentSession();
 			session.update(p);
 			session.flush();
+			session.close();
 			logger.info("Product updated successfully,Product details="+p);
 		}
 		

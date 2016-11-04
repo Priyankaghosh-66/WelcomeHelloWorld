@@ -21,11 +21,20 @@
 <context:component-scan base-package="controllers"/>
 <context:component-scan base-package="Services"/>
 <context:component-scan base-package="daoimpl"/>
+<!-- <context:component-scan base-package="repository"/> -->
 
 
 
 <mvc:resources location="/resources/" mapping="/resources/**"/>
-
+ <!-- <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="basenames">
+            <list>
+                <value>classpath:validation</value>
+            </list>
+        </property>
+    </bean> -->
+    <!--  <bean id="userDetailsServiceImpl" class="Services.UserDetailsServiceImpl"></bean>
+ -->
 
 <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" id="viewResolver">
 

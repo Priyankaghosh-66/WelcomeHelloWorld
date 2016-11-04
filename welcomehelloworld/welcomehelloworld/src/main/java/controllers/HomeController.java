@@ -101,7 +101,7 @@ public class HomeController {
 	{
 		return "index";
 	}
-	@RequestMapping("login")
+	@RequestMapping("/login")
 	public String loadlogin()
 	{
 		return "login";
@@ -131,6 +131,12 @@ public class HomeController {
 	//@RequestMapping("/Demean")
 	public String loadProducts(){
 		return "redirect:/Product";
+	}
+	
+	@RequestMapping("/loginError")
+	public String loadErrorPage()
+	{
+		return "loginError";
 	}
 
 
