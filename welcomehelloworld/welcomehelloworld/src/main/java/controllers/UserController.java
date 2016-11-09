@@ -67,7 +67,7 @@ public class UserController {
 		return "redirect:/Register";
 	}
 	
-	@RequestMapping("/Register")
+	/*@RequestMapping("/Register")
 	public ModelAndView loadtable()
 	{
 		ModelAndView mvu=new ModelAndView("user");
@@ -75,9 +75,9 @@ public class UserController {
 	    ulist= userService.getAll();
 	    mvu.addObject("listUsers", ulist);
 	    return mvu;
-	}
+	}*/
 		
-	/*@RequestMapping("/Register")*/
+	@RequestMapping("/Register")
 		public String loadRegister(){
 			return "user";
 		}

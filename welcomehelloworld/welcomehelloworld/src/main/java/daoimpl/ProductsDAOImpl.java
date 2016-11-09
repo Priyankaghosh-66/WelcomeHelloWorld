@@ -50,9 +50,7 @@ public class ProductsDAOImpl {
 		/*@Override*/
 		public void updateProducts(Products p){
 			Session session=this.sessionFactory.getCurrentSession();
-			session.update(p);
-			session.flush();
-			session.close();
+			session.saveOrUpdate(p);
 			logger.info("Product updated successfully,Product details="+p);
 		}
 		

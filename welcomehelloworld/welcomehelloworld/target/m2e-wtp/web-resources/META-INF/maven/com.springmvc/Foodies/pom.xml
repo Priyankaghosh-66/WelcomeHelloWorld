@@ -2,10 +2,10 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.springmvc</groupId>
-  <artifactId>welcomehelloworld</artifactId>
+  <artifactId>Foodies</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
-  <name>welcomehelloworld Maven Webapp</name>
+  <name>Foodies Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
   <dependency>
@@ -226,7 +226,7 @@
 
 </dependencies>
   <build>
-    <finalName>welcomehelloworld</finalName>
+    <finalName>Foodies</finalName>
     <plugins>
         <plugin>
         <groupId>org.apache.maven.plugins</groupId>
