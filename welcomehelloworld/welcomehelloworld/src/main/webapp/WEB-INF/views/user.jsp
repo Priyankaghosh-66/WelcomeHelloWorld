@@ -25,6 +25,13 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
 		.tk th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f0f0f0;}
 		.tk .tg-4eph{background-color:#f9f9f9}
 	</style>
+	<!-- <style>
+    .error 
+    {
+        color: #ff0000;
+        font-weight: bold;
+    }
+    </style> -->
 </head>
 <body>
 <h1>
@@ -34,8 +41,9 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
 <c:url var="addAction" value="/user/addition" ></c:url>
 
 <form:form action="${addAction}" commandName="User">
+
 <table>
-	<c:if test="${!empty user.displayName}">
+	<c:if test="${!empty user.username}">
 	<tr>
 		<td>
 			<form:label path="id">
@@ -55,8 +63,12 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
 			</form:label>
 		</td>
 		<td>
+		<form:errors path="firstName" cssStyle="color: #ff0000;"/>
 			<form:input path="firstName" />
+			
 		</td> 
+		
+		
 	</tr>
 	<tr>
 		<td>
@@ -65,8 +77,13 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
 			</form:label>
 		</td>
 		<td>
+		<form:errors path="lastName" cssStyle="color: #ff0000;"/>
 			<form:input path="lastName" />
-		</td> 
+			</td>
+			
+
+		
+		
 	</tr>
 	<tr>
 		<td>
@@ -75,8 +92,13 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
 			</form:label>
 		</td>
 		<td>
+		<form:errors path="username" cssStyle="color: #ff0000;"/>
 			<form:input path="username" />
-		</td> 
+			
+			
+		</td>
+		
+		 
 	</tr>
 	
 	<tr>
@@ -86,8 +108,12 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
 			</form:label>
 		</td>
 		<td>
+		<form:errors path="password" cssStyle="color: #ff0000;"/>
 			<form:input path="password" />
+			
 		</td>
+		
+		
 	</tr>
 	<tr>
 		<td>
@@ -96,24 +122,30 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
 			</form:label>
 		</td>
 		<td>
+		<form:errors path="email" cssStyle="color: #ff0000;"/>
 			<form:input path="email" />
+			
 		</td>
+		
+		
 	</tr>
 	<tr>
 		<td colspan="2">
-			<c:if test="${!empty user.id}">
+			<%-- <c:if test="${!empty user.id}">
 				<input type="submit"
 					value="<spring:message text="Edit User"/>" />
-			</c:if>
-			<c:if test="${empty user.id}">
+			</c:if> --%>
+			<%-- <c:if test="${empty user.id}"> --%>
 				<input type="submit"
 					value="<spring:message text="Add User"/>" />
-			</c:if>
+			<%-- </c:if> --%>
 		</td>
 	</tr>
 </table>	
 </form:form>
-<br>
+</body>
+</html>
+<%-- <br>
  <h3>User List</h3>
 <c:if test="${!empty listUsers}">
 	<table class="tk">
@@ -147,4 +179,4 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
 $(document).ready(function(){
     $('#tk').DataTable();
 });
-</script> 
+</script>  --%>

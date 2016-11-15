@@ -52,7 +52,6 @@
 
 
 <!-- <bean class="Services.productservicesImpl" id="ps"/>
-
 <bean class="daoimpl.ProductsDAOImpl" id="pdi"/>
  -->
 </beans>

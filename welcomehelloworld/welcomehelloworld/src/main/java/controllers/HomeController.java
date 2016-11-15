@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 
@@ -65,7 +66,35 @@ public class HomeController {
 	return "Product";
 	}
 	@RequestMapping(value="/products/add",method=RequestMethod.POST)
-	public String addProducts(@ModelAttribute("products") Products p){
+	public String addProducts(@ModelAttribute("products") Products p,BindingResult result,HttpServletRequest request){
+		{
+			String filename=null;
+			byte[]bytes;
+			if(!p.getImage().isEmpty())
+			{
+				try
+				{
+					bytes=p.getImage().getBytes();
+					psi.addProducts(p);
+					System.out.println("DATA INSERTED");
+					
+					
+					String path=request.getSession().getServletContext().getRealPath("/resources/Images/"+p.getId()+".jpg");
+					System.out.println("Path="+path);
+					System.out.println("File Name="+p.getImage().getOriginalFilename());
+					File f=new File(path);
+					BufferedOutputStream bs=new BufferedOutputStream(new FileOutputStream(f));
+					bs.write(bytes);
+					bs.close();
+					System.out.println("Image Uploaded");
+				}
+				catch(Exception ex)
+				{
+					System.out.println(ex.getMessage());
+				}
+			}
+		}
+		
 		if(p.getId()==0){
 			this.psi.addProducts(p);
 		}else {

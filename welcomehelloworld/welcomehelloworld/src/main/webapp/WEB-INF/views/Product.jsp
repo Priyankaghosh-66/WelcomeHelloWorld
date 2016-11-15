@@ -31,7 +31,7 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
 </h1>
 <c:url var="addAction" value="/products/add" ></c:url>
 
-<form:form action="${addAction}" commandName="products">
+<form:form action="${addAction}" method="POST" commandName="products" enctype="multipart/form-data">
 <table>
 	<c:if test="${!empty product.name}">
 	<tr>
@@ -101,12 +101,23 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
 		</td> 
 	</tr>
 	<tr>
+		<td>
+			<form:label path="image">
+				<spring:message text="File to upload"/>
+			</form:label>
+		</td>
+		<td>
+			<form:input path="image" type="file" />
+		</td> 
+	</tr>
+	
+	<tr>
 		<td colspan="2">
-			<c:if test="${!empty product.name}">
+			<c:if test="${!empty product.id}">
 				<input type="submit"
 					value="<spring:message text="Edit Products"/>" />
 			</c:if>
-			<c:if test="${empty product.name}">
+			<c:if test="${empty product.id}">
 				<input type="submit"
 					value="<spring:message text="Add Products"/>" />
 			</c:if>

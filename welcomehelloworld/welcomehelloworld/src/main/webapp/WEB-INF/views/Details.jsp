@@ -16,7 +16,7 @@
 	</thead>
 	<tbody>
 		<tr >
-			<td rowspan="6"><img src="resources/images/${param.id}.jpg"></td>
+			<td rowspan="6"><img src="resources/Images/${param.id}.jpg"></td>
 			
 		</tr>
 		<tr>
@@ -33,7 +33,7 @@
 		</tr>
 		<tr>
 		<td><b>Category</b></td>
-		<td>${param.Category}</td>
+		<td>${param.category}</td>
 		</tr>
 		<tr>
 		<td><b>Price</b></td>

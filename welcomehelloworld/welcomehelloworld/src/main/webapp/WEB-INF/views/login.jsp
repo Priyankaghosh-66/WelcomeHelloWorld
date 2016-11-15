@@ -22,7 +22,7 @@
 		</c:if>
 
 		<form name='login'
-			action="<c:url value='perform_login' />" method='POST'>
+			action="<c:url value='perform_login' />" method='post'>
 
 			<table>
 				<tr>

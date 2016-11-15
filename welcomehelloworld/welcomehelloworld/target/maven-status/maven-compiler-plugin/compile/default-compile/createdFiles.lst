@@ -1,5 +1,11 @@
 controllers\HomeController.class
-Models\Products.class
 daoimpl\ProductsDAOImpl.class
+Models\User.class
 Services\ProductServicesImpl.class
+dao\UserDAO.class
+controllers\UserController.class
+Models\Products.class
+Services\UserServiceImpl.class
 dao\ProductDAO.class
+Services\UserService.class
+daoimpl\UserDAOImpl.class

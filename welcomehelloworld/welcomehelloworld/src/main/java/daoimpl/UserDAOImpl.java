@@ -20,7 +20,6 @@ public class UserDAOImpl implements UserDAO {
 	@Autowired
 	private SessionFactory sessionFactory;
 
-	@Override
 	public void addUser(User u) {
 		Session session=this.sessionFactory.getCurrentSession();
 		session.persist(u);
@@ -29,7 +28,6 @@ public class UserDAOImpl implements UserDAO {
 		
 	}
 
-	@Override
 	public void updateUser(User u) {
 		Session session=this.sessionFactory.getCurrentSession();
 		session.update(u);
@@ -38,7 +36,6 @@ public class UserDAOImpl implements UserDAO {
 		
 	}
 
-	@Override
 	public List<User> listUsers() {
 		Session session=this.sessionFactory.getCurrentSession();
 		List<User>userList=session.createQuery("from User").list();
@@ -49,7 +46,6 @@ public class UserDAOImpl implements UserDAO {
 		// TODO Auto-generated method stub
 	}
 
-	@Override
 	public User getUserById(int id) {
 		Session session=this.sessionFactory.getCurrentSession();
 		User u=(User) session.load(User.class, new Integer(id));
@@ -58,7 +54,6 @@ public class UserDAOImpl implements UserDAO {
 		return u;
 	}
 
-	@Override
 	public void removeUser(int id) {
 		Session session=this.sessionFactory.getCurrentSession();
 		User u=(User) session.load(User.class,new Integer (id));
@@ -70,7 +65,6 @@ public class UserDAOImpl implements UserDAO {
 		
 	}
 
-	@Override
 	public List<User> viewUser() {
 
 		Session session = sessionFactory.openSession();
