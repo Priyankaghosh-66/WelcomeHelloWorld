@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -44,7 +45,12 @@ public class UserController {
 		return "user";
 	}
 	@RequestMapping(value="/user/addition",method=RequestMethod.POST)
-	public String addUser(@ModelAttribute("user")User u){
+	public String addUser(@ModelAttribute("user")User u,BindingResult result){
+		
+		if(result.hasErrors()){
+			return "user";
+		}
+		
 		if(u.getId()==0){
 			u.setEnabled(true);
 			u.setRole("ROLE_USER");
@@ -52,7 +58,7 @@ public class UserController {
 		}else {
 			this.userService.updateUser(u);
 		}
-		return "redirect:/Register";
+		return "redirect:/Userview";
 	}
 	@RequestMapping("/removal/{id}")
 	public String removeUser(@PathVariable("id")int id){

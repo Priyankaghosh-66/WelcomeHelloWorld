@@ -37,10 +37,9 @@ public class User implements Serializable {
 	private String lastName;
 	@NotEmpty
 	@Size(min=2,max=10,message="Your name should be between 5 - 10 characters.")
-	@Min(value=5,message="Please enter atleast 5 characters!")
 	private String username;
 	private String role;
-	@NotNull(message="Please select a password.")
+	@NotNull
 	@Length(min=5,max=10,message="password should be between 5-10 characters")
 	private String password;
 	private boolean enabled;
