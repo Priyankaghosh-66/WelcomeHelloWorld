@@ -29,7 +29,7 @@ public class User implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	@NotEmpty
-	@Size(min=2,max=20)
+	@Size(min=2,max=20,message="firstname should be actual name!!!")
 	private String firstName;
 	
 	@NotEmpty

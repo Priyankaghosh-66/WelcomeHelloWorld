@@ -48,9 +48,12 @@ public class ProductsDAOImpl {
 			logger.info("Product saved successfully,Product details="+p);
 		}
 		/*@Override*/
+		@Transactional
 		public void updateProducts(Products p){
-			Session session=this.sessionFactory.getCurrentSession();
+			Session session=this.sessionFactory.openSession();
 			session.saveOrUpdate(p);
+			session.flush();
+			session.close();
 			logger.info("Product updated successfully,Product details="+p);
 		}
 		
@@ -67,7 +70,7 @@ public class ProductsDAOImpl {
 		
 		public Products getProductsById(int id){
 			Session session=this.sessionFactory.getCurrentSession();
-			Products p=(Products)session.get(Products.class, new Integer(id));
+			Products p=(Products)session.get(Products.class, id);
 			logger.info("Products loaded successfully,Product Details="+p);
 			return p;
 		}

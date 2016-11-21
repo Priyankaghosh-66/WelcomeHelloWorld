@@ -24,14 +24,13 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
 		.tk td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;}
 		.tk th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f0f0f0;}
 		.tk .tg-4eph{background-color:#f9f9f9}
-	</style>
-	<!-- <style>
+
     .error 
     {
         color: #ff0000;
         font-weight: bold;
     }
-    </style> -->
+    </style> 
 </head>
 <body>
 <h1>
@@ -63,7 +62,7 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
 			</form:label>
 		</td>
 		<td>
-		<form:errors path="firstName" cssStyle="color: #ff0000;"/>
+		<form:errors path="firstName" cssClass="error"/>
 			<form:input path="firstName" />
 			
 		</td> 
@@ -77,7 +76,7 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
 			</form:label>
 		</td>
 		<td>
-		<form:errors path="lastName" cssStyle="color: #ff0000;"/>
+		<form:errors path="lastName" cssClass="error"/>
 			<form:input path="lastName" />
 			</td>
 			
@@ -92,7 +91,7 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
 			</form:label>
 		</td>
 		<td>
-		<form:errors path="username" cssStyle="color: #ff0000;"/>
+		<form:errors path="username" cssClass="error"/>
 			<form:input path="username" />
 			
 			
@@ -108,7 +107,7 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
 			</form:label>
 		</td>
 		<td>
-		<form:errors path="password" cssStyle="color: #ff0000;"/>
+		<form:errors path="password" cssClass="error"/>
 			<form:input path="password" />
 			
 		</td>
@@ -122,7 +121,7 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
 			</form:label>
 		</td>
 		<td>
-		<form:errors path="email" cssStyle="color: #ff0000;"/>
+		<form:errors path="email" cssClass="error"/>
 			<form:input path="email" />
 			
 		</td>

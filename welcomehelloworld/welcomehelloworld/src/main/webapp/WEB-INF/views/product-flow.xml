@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/webflow
+                          http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
+                          
+                          
+ 
+ <!-- Executed when webFlow is triggered -->
+ <var name="order" class="bean.UserBean"/>
+	<!-- <on-start>
+		demohandler is java class available through annotated Demohandler.java 
+			class.here we are calling it’s initFlow() method.
+		<evaluate expression="FlowHandler.initFlow()" result="flowScope.userBean" />
+	</on-start> -->
+ 
+     <!-- <view-state id="confirm" view="/confirm.jsp">
+     <transition on="continue" to="finish"/>
+     <transition on="cancel" to="cancelled"/>
+     </view-state>
+     <end-state id="cancelled" view="/cancelled.jsp"/>
+     <end-state id="finish" view="/finish.jsp"/>  -->
+     
+     <!-- if not specified the first view state is the starting state -->
+	<view-state id="memberDetails" view="memberDetails" model="userBean">
+		<transition on="submit" to="confirmDetails" />
+	</view-state>
+	<view-state id="confirmDetails" view="confirmDetails" model="flowScope.userBean">
+		<transition on="edit" to="start" />
+		<transition on="submit" to="thankyou" />
+	</view-state>
+	<end-state id="thankyou" view="thankyou" />
+
+	<end-state id="toHome" view="externalRedirect:contextRelative:index.jsp" />
+
+	<end-state id="toException"
+		view="externalRedirect:contextRelative:exception.jsp" />
+	
+                             
+                          
+                          
+                          
+</flow>                          

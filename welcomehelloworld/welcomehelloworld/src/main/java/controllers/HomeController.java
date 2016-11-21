@@ -28,6 +28,7 @@ import org.springframework.web.servlet.ModelAndView;
 import Models.Products;
 //import Services.productservices;
 import Services.ProductServicesImpl;
+import bean.UserBean;
 import daoimpl.ProductsDAOImpl;
 @Controller
 public class HomeController {
@@ -59,6 +60,11 @@ public class HomeController {
 		return new Products();
 	}
 	
+	@ModelAttribute("memberDetails")
+	public UserBean createbean()
+	{
+		return new UserBean();
+	}
 	@RequestMapping(value="/products", method= RequestMethod.GET)
 	public String listProducts(Model Models){
 	Models.addAttribute("products", new Products());
@@ -109,14 +115,13 @@ public class HomeController {
 		return "redirect:/Demean";
 	}
 	
-	@RequestMapping("/edit/{id}")
-	public String updateProducts(@PathVariable("id") int id,Model models)/*throws IOException*/{
-		/*Products product=this.psi.getProductsById(id);
-		models.addAttribute("product",product);*/
+	/*@RequestMapping("/edit/{id}")
+	public String updateProducts(@PathVariable("id") int id,Model models){
+		
 		models.addAttribute("products",this.psi.getProductsById(id));
 		models.addAttribute("listofProducts",this.psi.listofProducts());
 		return "Product";
-	}
+	}*/
 	//ProductsDAOImpl pdi;
 	
 	/*@Autowired
@@ -125,6 +130,21 @@ public class HomeController {
 		
 		this.pdi=pdi;
 	}*/
+	
+
+	@RequestMapping(value="/edit/{id}")
+	public ModelAndView getEditForm(@PathVariable(value="id")int id,Model models){
+		models.addAttribute("products", this.psi.getProductsById(id));
+		Products p=this.psi.getProductsById(id);
+		System.out.println("in edit method");
+		return new ModelAndView("EditProductsForm","EditProductsObj",p);
+	}
+	@RequestMapping(value="/edit",method=RequestMethod.POST)
+	public String updateProducts(@ModelAttribute(value="EditProductsObj")Products p){
+		this.psi.updateProducts(p);
+		System.out.println("in edit method2");
+		return "redirect:/Demean";
+	}
 	
 	@RequestMapping("/")
 	public String loadIndex()
@@ -205,6 +225,7 @@ public class HomeController {
 		models.addAttribute("product",product);*/
 		return "Details";
 	}
+	
 }
 	
 	 
