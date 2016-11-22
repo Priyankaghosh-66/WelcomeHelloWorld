@@ -3,6 +3,8 @@ package controllers;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -38,25 +40,25 @@ public class UserController {
 		return new User();
 	}
 	
-	@RequestMapping(value="/Registration",method=RequestMethod.GET)
+	@RequestMapping(value="/Register",method=RequestMethod.GET)
 	public String listUsers(Model Models){
 		Models.addAttribute("user", new User());
 		Models.addAttribute("listUsers", this.userService.listUsers());
 		return "user";
 	}
-	@RequestMapping(value="/user/addition",method=RequestMethod.POST)
-	public String addUser(@ModelAttribute("user")User u,BindingResult result){
+	@RequestMapping(value="/freshuser",method=RequestMethod.POST)
+	public String addUser(@Valid @ModelAttribute("User") User user,BindingResult result){
 		
 		if(result.hasErrors()){
 			return "user";
 		}
 		
-		if(u.getId()==0){
-			u.setEnabled(true);
-			u.setRole("ROLE_USER");
-			this.userService.addUser(u);
+		if(user.getId()==0){
+			user.setEnabled(true);
+			user.setRole("ROLE_USER");
+			this.userService.addUser(user);
 		}else {
-			this.userService.updateUser(u);
+			this.userService.updateUser(user);
 		}
 		return "redirect:/Userview";
 	}
@@ -66,12 +68,12 @@ public class UserController {
 		return "redirect:/Register";
 	}
 	
-	public String editUser(@PathVariable("id")int id,Model Models){
+	/*public String editUser(@PathVariable("id")int id,Model Models){
 		Models.addAttribute("User", this.userService.getUserById(id));
 		Models.addAttribute("listUsers", this.userService.listUsers());
 	
 		return "redirect:/Register";
-	}
+	}*/
 	
 	/*@RequestMapping("/Register")
 	public ModelAndView loadtable()
@@ -83,10 +85,10 @@ public class UserController {
 	    return mvu;
 	}*/
 		
-	@RequestMapping("/Register")
+	/*@RequestMapping("/Register")
 		public String loadRegister(){
 			return "user";
-		}
+		}*/
 	
 	
 

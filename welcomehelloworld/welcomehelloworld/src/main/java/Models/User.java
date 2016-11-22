@@ -28,19 +28,19 @@ public class User implements Serializable {
 	@Column(name="id")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
-	@NotEmpty
-	@Size(min=2,max=20,message="firstname should be actual name!!!")
+	@NotNull(message="firstname should be actual name!!!")
+	@Size(min=2,max=20)
 	private String firstName;
 	
-	@NotEmpty
+	@NotNull
 	@Size(min=2,max=20)
 	private String lastName;
-	@NotEmpty
-	@Size(min=2,max=10,message="Your name should be between 5 - 10 characters.")
+	@NotNull(message="Your name should be between 5 - 10 characters.")
+	@Size(min=2,max=10)
 	private String username;
 	private String role;
-	@NotNull
-	@Length(min=5,max=10,message="password should be between 5-10 characters")
+	@NotNull(message="password should be between 5-10 characters")
+	@Length(min=5,max=10)
 	private String password;
 	private boolean enabled;
 	public boolean isEnabled() {
@@ -49,7 +49,8 @@ public class User implements Serializable {
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
 	}
-	@Pattern(regexp=".+@.+\\..+", message="Wrong email!")
+	@NotNull(message="Wrong email!")
+	@Pattern(regexp=".+@.+\\..+")
 	private String email;
 	
 	public int getId() {

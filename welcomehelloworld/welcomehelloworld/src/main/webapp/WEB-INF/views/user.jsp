@@ -1,7 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
-<%@ page session="false" %>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -19,18 +18,15 @@ href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"></style>
 src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" 
 src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-	<style type="text/css">
-		.tk  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
-		.tk td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;}
-		.tk th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f0f0f0;}
-		.tk .tg-4eph{background-color:#f9f9f9}
-
-    .error 
-    {
-        color: #ff0000;
-        font-weight: bold;
+	
+<style type="text/css">
+    .error {
+        color: #FF6347;
+        margin-bottom: 20px;
+        padding: 15px;
     }
-    </style> 
+    </style>
+     
 </head>
 <body>
 <h1>
@@ -39,7 +35,7 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
 
 <c:url var="addAction" value="/user/addition" ></c:url>
 
-<form:form action="${addAction}" commandName="User">
+<form:form action="freshuser" commandName="User" method="POST">
 
 <table>
 	<c:if test="${!empty user.username}">
@@ -55,20 +51,25 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
 		</td> 
 	</tr>
 	</c:if>
+	
 	<tr>
+	
 		<td>
 			<form:label path="firstName">
 				<spring:message text="FirstName"/>
 			</form:label>
 		</td>
 		<td>
-		<form:errors path="firstName" cssClass="error"/>
-			<form:input path="firstName" />
+		
+			<form:input path="firstName" id="firstName" class="form-Control"/>
+			</td>
+			<td align="left"><form:errors path="firstName" cssClass="error"/>
 			
 		</td> 
 		
 		
 	</tr>
+
 	<tr>
 		<td>
 			<form:label path="lastName">
@@ -76,9 +77,11 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
 			</form:label>
 		</td>
 		<td>
-		<form:errors path="lastName" cssClass="error"/>
-			<form:input path="lastName" />
+		
+			<form:input path="lastName" id="lastName" class="form-Control"/>
 			</td>
+			<td align="left"><form:errors path="lastName" cssClass="error"/></td>
+			
 			
 
 		
@@ -91,11 +94,13 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
 			</form:label>
 		</td>
 		<td>
-		<form:errors path="username" cssClass="error"/>
-			<form:input path="username" />
+		
+			<form:input path="username" id="username" class="form-Control"/>
 			
-			
-		</td>
+			</td>
+			<td align="left">
+			<form:errors path="username" cssClass="error"/>
+			</td>
 		
 		 
 	</tr>
@@ -107,8 +112,11 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
 			</form:label>
 		</td>
 		<td>
-		<form:errors path="password" cssClass="error"/>
-			<form:input path="password" />
+		
+			<form:input path="password" id="password" class="form-Control"/>
+			
+			</td>
+			<td align="left"> <form:errors path="password" cssClass="error"/>
 			
 		</td>
 		
@@ -121,8 +129,10 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
 			</form:label>
 		</td>
 		<td>
-		<form:errors path="email" cssClass="error"/>
-			<form:input path="email" />
+		
+			<form:input path="email" id="email" class="form-Control"/>
+			</td>
+			<td align="left"><form:errors path="email" cssClass="error"/>
 			
 		</td>
 		
