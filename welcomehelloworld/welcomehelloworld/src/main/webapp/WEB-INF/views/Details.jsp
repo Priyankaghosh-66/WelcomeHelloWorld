@@ -7,9 +7,17 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style type="text/css">
+       .table{background-color:#FFFFFF} 
+    
+    </style>
 <title>Foodies</title>
+</head>
 
-<body>
+<body background="<c:url value='/resources/Images/back.jpg' />">
 <table class="table">
 	<thead colspan="3">
 	<th><h1>Details</h1></th>
@@ -19,6 +27,7 @@
 			<td rowspan="6"><img src="resources/Images/${param.id}.jpg"></td>
 			
 		</tr>
+		
 		<tr>
 		<td><h3>Features</h3></td>
 		<td><h3>Details</h3></td>
@@ -45,9 +54,10 @@
 		</tr>
 		<tr>
 			<td>
-				<a href = "member" class = "btn btn-primary" role = "button">Buy </a> 
+				<a href = "#" class = "btn btn-primary" role = "button">Buy </a> 
             	<a href = "#" class = "btn btn-default" role = "button">Wishlist</a>
             	<a href="#" role="button" data-toggle="modal" class = "btn btn-default">Share with a Friend</a>
+            	<a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Add to cart</a>
             </td>
 		</tr>
 		<tr>

@@ -28,7 +28,6 @@ import org.springframework.web.servlet.ModelAndView;
 import Models.Products;
 //import Services.productservices;
 import Services.ProductServicesImpl;
-import bean.UserBean;
 import daoimpl.ProductsDAOImpl;
 @Controller
 public class HomeController {
@@ -60,11 +59,7 @@ public class HomeController {
 		return new Products();
 	}
 	
-	@ModelAttribute("memberDetails")
-	public UserBean createbean()
-	{
-		return new UserBean();
-	}
+	
 	@RequestMapping(value="/products", method= RequestMethod.GET)
 	public String listProducts(Model Models){
 	Models.addAttribute("products", new Products());

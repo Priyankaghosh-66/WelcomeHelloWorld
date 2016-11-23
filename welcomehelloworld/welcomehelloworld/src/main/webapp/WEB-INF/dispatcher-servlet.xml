@@ -41,17 +41,6 @@
     </bean> -->
     <!--  <bean id="userDetailsServiceImpl" class="Services.UserDetailsServiceImpl"></bean>
  -->
- <!-- WebFlow Configuration -->
-	<webflow:flow-executor id="flowExecutor" />
- 
-	<webflow:flow-registry id="flowRegistry"
-		flow-builder-services="flowBuilderServices" base-path="/WEB-INF/views">
-		<!-- here the id is mapped to invoke this flow -->
-		<webflow:flow-location id="member" path="product-flow.xml" />
-	</webflow:flow-registry>
- 
-	<webflow:flow-builder-services id="flowBuilderServices"
-		view-factory-creator="viewFactoryCreator" />
  
 	<bean id="viewFactoryCreator"
 		class="org.springframework.webflow.mvc.builder.MvcViewFactoryCreator">
@@ -71,21 +60,13 @@
 <property value="/WEB-INF/views/" name="prefix"/>
 
 <property value=".jsp" name="suffix"/>
-<property name="order" value="-1"></property>
 
 </bean>
 <bean id="multipartResolver"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		<property name="maxUploadSize" value="1024000" />
 	</bean>
-	<bean class="org.springframework.webflow.mvc.servlet.FlowHandlerAdapter">
-		<property name="flowExecutor" ref="flowExecutor" />
-	</bean>
- 
-	<bean class="org.springframework.webflow.mvc.servlet.FlowHandlerMapping">
-		<property name="flowRegistry" ref="flowRegistry" />
-		<property name="order" value="0" />
-	</bean>
+	
 	 
      
 
