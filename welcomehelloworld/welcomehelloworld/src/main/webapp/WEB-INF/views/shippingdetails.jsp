@@ -4,11 +4,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>shipping Address</title>
 </head>
 <body>
-<h1>ThankYou For Your Order</h1>
-<input name="_eventId_cancel" type="submit" value="Back to home"/>
+<h1>This is a Shipping Address page</h1>
+     <input name="_eventId_edit"  type="submit" value="Modify Address"/>
+     <input name="_eventId_submit" type="submit" value="Confirm Address"/>
 
 </body>
 </html>

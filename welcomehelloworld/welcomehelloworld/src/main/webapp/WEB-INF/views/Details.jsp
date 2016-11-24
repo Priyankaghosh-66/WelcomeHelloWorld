@@ -54,7 +54,7 @@
 		</tr>
 		<tr>
 			<td>
-				<a href = "#" class = "btn btn-primary" role = "button">Buy </a> 
+				<a href = "checkoutFlow" class = "btn btn-primary" role = "button">Buy </a> 
             	<a href = "#" class = "btn btn-default" role = "button">Wishlist</a>
             	<a href="#" role="button" data-toggle="modal" class = "btn btn-default">Share with a Friend</a>
             	<a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Add to cart</a>

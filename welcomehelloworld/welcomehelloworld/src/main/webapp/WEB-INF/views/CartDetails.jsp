@@ -4,11 +4,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Cart</title>
 </head>
 <body>
-<h1>ThankYou For Your Order</h1>
-<input name="_eventId_cancel" type="submit" value="Back to home"/>
+<h1>this page will show cart details</h1>
+       <input name="_eventId_edit" type="submit" value="Edit"/>
+       <input name="_eventId_submit" type="submit" value="Confirm Details"/>
 
 </body>
 </html>

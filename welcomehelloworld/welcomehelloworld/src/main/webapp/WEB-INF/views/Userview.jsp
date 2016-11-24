@@ -20,25 +20,29 @@ src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
 src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 	<style type="text/css">
 		.tg  {border-collapse:collapse;border-spacing:50px;border-color:#ccc;}
+		.tg  {width:500px;margin:10px auto;}
 		.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;}
 		.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f0f0f0;}
 		.tg .tg-4eph{background-color:#f9f9f9}
 	</style>
 </head>
+
 <body background="<c:url value='/resources/Images/back.jpg' />">
+<div style="text-align:center">
 <h1>Products List</h1>
 <c:if test="${!empty listofProducts}">
+
     <table class="tg">
    
 	<tr>
 	
-	    <th width="80">Product ID</th>
-		<th width="100">Product NAME</th>
-		<th width="100">Product STATUS</th>
-		<th width="100">Product DESCRIPTION</th>
-		<th width="80">Product PRICE</th>
+	    <th width="200">Product ID</th>
+		<th width="200">Product NAME</th>
+		<th width="200">Product STATUS</th>
+		<th width="400">Product DESCRIPTION</th>
+		<th width="180">Product PRICE</th>
 		<th width="100">Product CATEGORY</th>
-		<th width="100">Details</th>
+		<th width="200">Details</th>
 	</tr>
 	<c:forEach items="${listofProducts}" var="products">
 		<tr>
@@ -53,7 +57,10 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
 		</tr>
 	</c:forEach>
 	</table>
+	
 </c:if>
+</div>
+	
 </body>
 </html>
 
