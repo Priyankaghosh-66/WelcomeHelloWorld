@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+
+<beans:beans xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd" xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context" xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/mvc">
+
+<tx:annotation-driven/>
+
+
+<beans:bean destroy-method="close" class="org.apache.commons.dbcp.BasicDataSource" id="dataSource">
+
+<beans:property value="org.h2.Driver" name="driverClassName"/>
+
+<beans:property value="jdbc:h2:tcp://localhost/~/test" name="url"/>
+
+<beans:property value="sa" name="username"/>
+
+<beans:property value="sa" name="password"/>
+
+</beans:bean>
+
+<context:component-scan base-package="controllers"/>
+
+<!-- Hibernate 4 SessionFactory Bean definition -->
+
+
+
+<beans:bean class="org.springframework.orm.hibernate4.LocalSessionFactoryBean" id="sessionFactory">
+
+<beans:property name="dataSource" ref="dataSource"/>
+
+
+<beans:property name="hibernateProperties">
+
+
+<beans:props>
+
+<beans:prop key="hibernate.dialect">org.hibernate.dialect.H2Dialect </beans:prop>
+
+<beans:prop key="hibernate.show_sql">true</beans:prop>
+
+<beans:prop key="hibernate.hbm2ddl.auto">update</beans:prop>
+
+</beans:props>
+
+</beans:property>
+
+
+<beans:property name="packagesToScan">
+
+
+<beans:list>
+
+<beans:value>Models</beans:value>
+
+</beans:list>
+
+</beans:property>
+
+</beans:bean>
+
+
+<beans:bean class="org.springframework.orm.hibernate4.HibernateTransactionManager" id="transactionManager">
+
+<beans:property name="sessionFactory" ref="sessionFactory"/>
+
+</beans:bean>
+
+</beans:beans>
