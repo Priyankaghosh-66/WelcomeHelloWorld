@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/webflow
+                          http://www.springframework.org/schema/webflow/spring-webflow.xsd">
+        <!-- Executed when webFlow is triggered -->
+	<!-- <on-start>
+		demohandler is java class available through annotated Demohandler.java 
+			class.here we are calling it’s initFlow() method.
+		<evaluate expression="DemoHandler.initFlow()" result="bean.UserBean" />
+	</on-start>
+ -->
+	<!-- if not specified the first view state is the starting state -->
+	<!-- <view-state id="start" view="CartDetails" model="Models.Cart">
+		<transition on="_eventId_edit" to="shippingdetails" />
+		
+	</view-state>
+	
+	<view-state id="shippingdetails" view="shippingdetails" model="Models.Cart">
+		<transition on="edit" to="editshippingaddress" />
+		<transition on="submitshippingaddress" to="ConfirmDetails" />
+	</view-state>
+	<view-state id="ConfirmDetails" view="ConfirmDetails" model="Models.Cart">
+		<transition on="cancel" to="home" />
+		<transition on="submit" to="thankyou" />
+	</view-state>
+
+	<end-state id="thankyou" view="thankyou.jsp" />
+
+	<end-state id="toHome" view="externalRedirect:contextRelative:index.jsp" />
+
+	<end-state id="toCancel"
+		view="externalRedirect:contextRelative:index.jsp" />
+	 -->
+        <view-state id="CartDetails" view="CartDetails">
+		<transition on="event1" to="shippingdetails"></transition>
+	</view-state>
+	<view-state id="shippingdetails" view="shippingdetails">
+	<transition on="event2" to="ConfirmDetails"></transition>
+	</view-state>
+	<view-state id="ConfirmDetails" view="ConfirmDetails">
+	<transition on="event3" to="thankyou"></transition>
+		
+	</view-state>
+	<view-state id="thankyou" view="thankyou">
+		
+	</view-state>
+	
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+                          
+ </flow>                         

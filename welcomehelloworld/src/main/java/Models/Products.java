@@ -1,28 +1,39 @@
 package Models;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+
+import org.springframework.ui.Model;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 @Entity
 @Table
-public class Products {
+public class Products implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8782285056486366848L;
 	@Id
 	@Column(name="id") 
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	private String name;
-	String category;
-	int price;
-	String description;
-	String status;
+	private String category;
+	private int price;
+	private String description;
+	private String status;
+	@Transient
+	private MultipartFile Image;
 
 	
-	
-
 	public Products() {
 		super();
 	}
@@ -87,4 +98,19 @@ public class Products {
 	public String toString(){
 		return "id="+id+", name="+name+", category="+category+", Price="+price+", Description="+description+", Status="+status;
 	}
+
+	public MultipartFile getImage() {
+		return Image;
+	}
+
+	public void setImage(MultipartFile image) {
+		Image = image;
+	}
+
+	
+
+	
+
+	
+	
 }

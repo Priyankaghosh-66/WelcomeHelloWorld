@@ -3,12 +3,10 @@ package Services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import Models.Products;
-import dao.ProductDAO;
 import daoimpl.ProductsDAOImpl;
 
 @Service
@@ -17,7 +15,7 @@ import daoimpl.ProductsDAOImpl;
 public class ProductServicesImpl {
 	
 	@Autowired
-	public ProductsDAOImpl pdi;
+	private ProductsDAOImpl pdi;
 
 	/*public void setpdi(ProductsDAOImpl pdi){
 		this.pdi=pdi;
@@ -40,9 +38,9 @@ public class ProductServicesImpl {
 
 	
 	
-	public List<Products> listProducts() {
+	public List<Products> listofProducts() {
 		// TODO Auto-generated method stub
-		return this.pdi.listProducts();
+		return this.pdi.listofProducts();
 	}
 
 	
