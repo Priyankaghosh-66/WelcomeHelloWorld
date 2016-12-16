@@ -33,7 +33,7 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">
-      <img id="actual-image" alt="website-logo" src="resource\Images\imo8.JPG" ></a>
+      <img id="actual-image" alt="website-logo" src="resources\Images\imo8.JPG" ></a>
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="#">Home</a></li>
@@ -64,20 +64,24 @@
             <li data-target="#myCarousel" data-slide-to="1"></li>
             <li data-target="#myCarousel" data-slide-to="2"></li>
             <li data-target="#myCarousel" data-slide-to="3"></li>
+            <li data-target="#myCarousel" data-slide-to="4"></li>
         </ol>   
         <!-- Wrapper for carousel items -->
         <div class="carousel-inner">
             <div class="item active">
-                <img src="resource\Images\bread.jpg" alt="First Slide">
+                <img src="resources\Images\bread.jpg" alt="First Slide">
             </div>
             <div class="item">
-                <img src="resource\Images\choco.jpg" alt="Second Slide">
+                <img src="resources\Images\choco.jpg" alt="Second Slide">
             </div>
             <div class="item">
-                <img src="resource\Images\Nuts.jpg" alt="Third Slide">
+                <img src="resources\Images\Nuts.jpg" alt="Third Slide">
             </div>
             <div class="item">
-                <img src="resource\Images\icy.jpg" alt="Fourth Slide">
+                <img src="resources\Images\icy.jpg" alt="Fourth Slide">
+            </div>
+            <div class="item">
+                <img src="resources\Images\cust3.jpg" alt="Fifth Slide">
             </div>
         </div>
         <!-- Carousel controls -->

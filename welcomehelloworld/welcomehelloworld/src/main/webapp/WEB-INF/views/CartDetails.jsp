@@ -8,8 +8,7 @@
 </head>
 <body>
 <h1>this page will show cart details</h1>
-       <input name="_eventId_edit" type="submit" value="Edit"/>
-       <input name="_eventId_submit" type="submit" value="Confirm Details"/>
+       <a href="${flowExecutionUrl}&_eventId=event1">Next Page</a>
 
 </body>
 </html>

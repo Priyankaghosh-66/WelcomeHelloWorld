@@ -19,7 +19,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name="USER")
-public class User implements Serializable {
+public class User {
 	/**
 	 * 
 	 */

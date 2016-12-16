@@ -71,4 +71,16 @@ public class UserDAOImpl implements UserDAO {
         List<User> userList = session.createQuery("from User").list();
 		return userList;
 	}
+	/*public List<User> detailsUser(int id){
+		Session session=sessionFactory.getCurrentSession();
+		List<User>thatUser=(List<User>)session.createSQLQuery("select * from USER where USER.id="+id).addEntity(User.class).list();
+		return thatUser;
+	}
+*/
+	/*public List<User> detailsUser(String userId) {
+
+		Session session=sessionFactory.getCurrentSession();
+		List<User>thatUser=(List<User>)session.createSQLQuery("select USER.username from USER where USER.id IS NOT "+userId).list();
+		return thatUser;
+	}*/
 }

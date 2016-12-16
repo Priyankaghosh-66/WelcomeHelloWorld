@@ -1,5 +1,7 @@
 package Models;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,7 +16,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Entity
 @Table
-public class Products {
+public class Products implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8782285056486366848L;
 	@Id
 	@Column(name="id") 
 	@GeneratedValue(strategy=GenerationType.IDENTITY)

@@ -9,7 +9,8 @@
 <body>
 <h1>This is a Shipping Address page</h1>
      <input name="_eventId_edit"  type="submit" value="Modify Address"/>
-     <input name="_eventId_submit" type="submit" value="Confirm Address"/>
+     <input name="_eventId_shippingdetails" type="submit" value="Confirm Address"/>
+     <a href="${flowExecutionUrl}&_eventId=event2">Next Page</a>
 
 </body>
 </html>

@@ -27,7 +27,7 @@ img{
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">
-      <img id="actual-image" alt="website-logo" src="resource\Images\imo8.JPG" ></a>
+      <img id="actual-image" alt="website-logo" src="resources\Images\imo8.JPG" ></a>
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="returnback">Home</a></li>
@@ -49,7 +49,7 @@ img{
 <div class="row">
  <div class="container">
 	<div class="col-md-6" >
-	<div style><img src="resource/Images/processed.jpg" alt="neon image" width="670" height="480">
+	<div style><img src="resources/Images/processed.jpg" alt="neon image" width="670" height="480">
 	</div>
 	</div>
 	<div class="col-md-6">

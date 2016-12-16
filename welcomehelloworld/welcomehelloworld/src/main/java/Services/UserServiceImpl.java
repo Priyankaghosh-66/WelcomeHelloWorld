@@ -45,4 +45,14 @@ public class UserServiceImpl implements UserService{
 		return userDAO.viewUser();
 	}
 
+	/*public List<User> detailsUser(int id) {
+		// TODO Auto-generated method stub
+		return userDAO.detailsUser(id);
+	}
+*/
+	/*public List<User> detailsUser(String userId) {
+		// TODO Auto-generated method stub
+		return userDAO.detailsUser(userId);
+	}
+*/
 }

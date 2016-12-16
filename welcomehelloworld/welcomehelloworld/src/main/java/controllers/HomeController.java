@@ -162,6 +162,11 @@ public class HomeController {
 	{
 		return "login";
 	}
+	/*@RequestMapping("/Userlogin")
+	public String loaduserlogin()
+	{
+		return "Userlogin";
+	}*/
 	@RequestMapping("/Demean")
 	public ModelAndView loadDatatable()
 	{
@@ -219,6 +224,11 @@ public class HomeController {
 		/*Products product=this.psi.getProductsById(id);
 		models.addAttribute("product",product);*/
 		return "Details";
+	}
+	@RequestMapping("modal")
+	public String loadaddtocart()
+	{
+		return "modal";
 	}
 	
 }

@@ -12,4 +12,5 @@ public interface UserService {
 	public User getUserById(int id);
 	public void removeUser(int id);
 	public List<User>getAll();
+	/*public List<User> detailsUser(String userId);*/
 }

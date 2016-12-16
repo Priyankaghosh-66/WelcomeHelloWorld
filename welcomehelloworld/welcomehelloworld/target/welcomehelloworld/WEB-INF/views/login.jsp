@@ -7,7 +7,7 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<body>
+<body background="<c:url value='/resources/Images/back.jpg' />">
 <h1>Admin LogIn </h1>
 
 	<div id="login-box">
@@ -22,7 +22,7 @@
 		</c:if>
 
 		<form name='login'
-			action="<c:url value='perform_login' />" method='POST'>
+			action="<c:url value='perform_login' />" method='post'>
 
 			<table>
 				<tr>
