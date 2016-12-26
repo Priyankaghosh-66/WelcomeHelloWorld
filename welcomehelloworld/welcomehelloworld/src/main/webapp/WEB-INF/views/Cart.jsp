@@ -5,7 +5,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js">
 
 </script>
-<script src="<c:url value="resources/js/controller.js"></c:url>"></script>
+<script src="<c:url value="/resources/js/controller.js"></c:url>"></script>
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -46,13 +46,13 @@ List of books purchased
 </thead>
 <tr ng-repeat="cartitem in cart.cartItems">
 <td>
-{{cartitem.book.title}}
+{{cartitem.product.title}}
 </td>
 <td>
 {{cartitem.quantity}}
 </td>
 <td>
-{{cartitem.book.price}}
+{{cartitem.product.price}}
 </td>
 <td>
 {{cartitem.totalPrice}}
@@ -66,7 +66,7 @@ List of books purchased
 </table>
 GrandTotal Price {{calculateGrandTotal()}}
 </div>
-<c:url value="/getAllBooks" var="url"></c:url>
+<c:url value="/Userview" var="url"></c:url>
 <a href="/order/${cartId}" class="btn btn-default">Continue shopping</a>
 </div>
 </div>

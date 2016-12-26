@@ -43,7 +43,7 @@
     <!--  <bean id="userDetailsServiceImpl" class="Services.UserDetailsServiceImpl"></bean>
  -->
  
- <bean id="customAuthenticationSuccessHandler" class="handler.CustomAuthenticationSuccessHandler" />
+ <!-- <bean id="customAuthenticationSuccessHandler" class="handler.CustomAuthenticationSuccessHandler" /> -->
  
  
  

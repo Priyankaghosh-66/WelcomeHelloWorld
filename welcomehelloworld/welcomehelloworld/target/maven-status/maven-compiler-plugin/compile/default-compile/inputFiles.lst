@@ -2,6 +2,7 @@ D:\Project_1\workspaces\Workspace_1\welcomehelloworld\src\main\java\controllers\
 D:\Project_1\workspaces\Workspace_1\welcomehelloworld\src\main\java\Models\Customer.java
 D:\Project_1\workspaces\Workspace_1\welcomehelloworld\src\main\java\Services\CartServiceImpl.java
 D:\Project_1\workspaces\Workspace_1\welcomehelloworld\src\main\java\daoimpl\CustomerDAOImpl.java
+D:\Project_1\workspaces\Workspace_1\welcomehelloworld\src\main\java\daoimpl\LoginDaoImpl.java
 D:\Project_1\workspaces\Workspace_1\welcomehelloworld\src\main\java\Services\CartItemServiceImpl.java
 D:\Project_1\workspaces\Workspace_1\welcomehelloworld\src\main\java\Services\CartService.java
 D:\Project_1\workspaces\Workspace_1\welcomehelloworld\src\main\java\controllers\CartController.java
@@ -10,6 +11,7 @@ D:\Project_1\workspaces\Workspace_1\welcomehelloworld\src\main\java\Models\Billi
 D:\Project_1\workspaces\Workspace_1\welcomehelloworld\src\main\java\controllers\CartItemController.java
 D:\Project_1\workspaces\Workspace_1\welcomehelloworld\src\main\java\Services\UserServiceImpl.java
 D:\Project_1\workspaces\Workspace_1\welcomehelloworld\src\main\java\dao\ProductDAO.java
+D:\Project_1\workspaces\Workspace_1\welcomehelloworld\src\main\java\Services\LoginService.java
 D:\Project_1\workspaces\Workspace_1\welcomehelloworld\src\main\java\daoimpl\CartItemDAOImpl.java
 D:\Project_1\workspaces\Workspace_1\welcomehelloworld\src\main\java\Models\CustomerOrder.java
 D:\Project_1\workspaces\Workspace_1\welcomehelloworld\src\main\java\daoimpl\CustomerOrderDAOImpl.java
@@ -25,14 +27,15 @@ D:\Project_1\workspaces\Workspace_1\welcomehelloworld\src\main\java\controllers\
 D:\Project_1\workspaces\Workspace_1\welcomehelloworld\src\main\java\Models\Cart.java
 D:\Project_1\workspaces\Workspace_1\welcomehelloworld\src\main\java\dao\CartItemDAO.java
 D:\Project_1\workspaces\Workspace_1\welcomehelloworld\src\main\java\daoimpl\UserDAOImpl.java
+D:\Project_1\workspaces\Workspace_1\welcomehelloworld\src\main\java\controllers\LoginController.java
 D:\Project_1\workspaces\Workspace_1\welcomehelloworld\src\main\java\daoimpl\ProductsDAOImpl.java
 D:\Project_1\workspaces\Workspace_1\welcomehelloworld\src\main\java\dao\CartDAO.java
 D:\Project_1\workspaces\Workspace_1\welcomehelloworld\src\main\java\Services\CartItemService.java
 D:\Project_1\workspaces\Workspace_1\welcomehelloworld\src\main\java\dao\CustomerOrderDAO.java
 D:\Project_1\workspaces\Workspace_1\welcomehelloworld\src\main\java\daoimpl\CartDAOImpl.java
 D:\Project_1\workspaces\Workspace_1\welcomehelloworld\src\main\java\dao\CustomerDAO.java
-D:\Project_1\workspaces\Workspace_1\welcomehelloworld\src\main\java\handler\CustomAuthenticationSuccessHandler.java
 D:\Project_1\workspaces\Workspace_1\welcomehelloworld\src\main\java\Services\UserService.java
 D:\Project_1\workspaces\Workspace_1\welcomehelloworld\src\main\java\Models\ShippingAddress.java
 D:\Project_1\workspaces\Workspace_1\welcomehelloworld\src\main\java\Services\CustomerOrderServiceImpl.java
+D:\Project_1\workspaces\Workspace_1\welcomehelloworld\src\main\java\dao\LoginDao.java
 D:\Project_1\workspaces\Workspace_1\welcomehelloworld\src\main\java\Models\Categories.java

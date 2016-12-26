@@ -225,10 +225,10 @@ public class HomeController {
 		models.addAttribute("product",product);*/
 		return "Details";
 	}
-	@RequestMapping("modal")
+	@RequestMapping("backed")
 	public String loadaddtocart()
 	{
-		return "modal";
+		return "Details";
 	}
 	
 }

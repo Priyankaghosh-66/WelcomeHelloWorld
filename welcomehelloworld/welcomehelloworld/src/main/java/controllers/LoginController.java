@@ -25,7 +25,7 @@ public class LoginController {
 		String password=loginService.getUserPassword(username);
 		String givenPassword=request.getParameter("psw");
 		
-		ModelAndView mv=new ModelAndView("CartDetails");
+		ModelAndView mv=new ModelAndView("Cart");
 		ModelAndView loginFail=new ModelAndView("index");
 		
 		if(password.equals(givenPassword))

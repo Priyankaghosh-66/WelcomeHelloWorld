@@ -33,7 +33,7 @@ public class Customer implements Serializable{
 	@JoinColumn(name="shippingAddressId")
 	private ShippingAddress shippingAddress;
 	@OneToOne(cascade=CascadeType.ALL,fetch=FetchType.EAGER)
-	@JoinColumn(name="userid")
+	@JoinColumn(name="id")
 	private User user;
 	@OneToOne(cascade=CascadeType.ALL,fetch=FetchType.EAGER)
 	@JoinColumn(name="cartId")

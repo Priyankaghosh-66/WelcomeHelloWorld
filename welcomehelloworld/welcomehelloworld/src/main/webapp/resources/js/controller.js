@@ -2,20 +2,20 @@ var myapp=angular.module("myapp",[])
 .controller("bookController",function($scope,$http){
 	
 	
-	$scope.getBooks=function(){
+	$scope.getProduct=function(){
 		$http.get(
-		'http://localhost:8008/welcomehelloworld/getBooksList').success(function(data){
-			$scope.books=data;
+		'http://localhost:8008/welcomehelloworld/Userview').success(function(data){
+			$scope.products=data;
 		})
 	};
 
-    $scope.addToCart=function(isbn){
-    	$http.put('http://localhost:8080/welcomehelloworld/cart/add/'+ isbn).success(function(){
+    $scope.addToCart=function(id){
+    	$http.put('http://localhost:8008/welcomehelloworld/cart/add/'+ isbn).success(function(){
     		alert('Book successfully added to the cart!')
     	})
     };
     $scope.refreshCart=function(){
-    	$http.get('http://localhost:8080/welcomehelloworld/cart/getCart/'+$scope.cartId).success(function(data){
+    	$http.get('http://localhost:8008/welcomehelloworld/cart/getCart/'+$scope.cartId).success(function(data){
     		$scope.cart=data;
     	})
     }; 
@@ -26,7 +26,7 @@ var myapp=angular.module("myapp",[])
     
     $scope.removeFromCart=function(cartItemId){
     	    	$http.put(
-'http://localhost:8080/welcomehelloworld/cart/removecartitem/'+cartItemId)
+'http://localhost:8008/welcomehelloworld/cart/removecartitem/'+cartItemId)
     	.success(function(){
     		$scope.refreshCart();
     	})

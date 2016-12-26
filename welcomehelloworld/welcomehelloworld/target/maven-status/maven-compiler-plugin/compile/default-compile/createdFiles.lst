@@ -6,14 +6,15 @@ dao\CartDAO.class
 controllers\UserController.class
 Services\UserServiceImpl.class
 Services\CustomerServices.class
-handler\CustomAuthenticationSuccessHandler.class
 Models\Categories.class
 Models\BillingAddress.class
+controllers\LoginController.class
 daoimpl\ProductsDAOImpl.class
 controllers\CartController.class
 dao\CustomerOrderDAO.class
 daoimpl\CustomerDAOImpl.class
 Services\CartItemService.class
+daoimpl\LoginDaoImpl.class
 dao\UserDAO.class
 Models\Products.class
 daoimpl\CartItemDAOImpl.class
@@ -33,6 +34,8 @@ Services\CartService.class
 Models\CartItem.class
 Models\Customer.class
 Services\CustomerServicesImpl.class
+dao\LoginDao.class
 dao\ProductDAO.class
 Models\CustomerOrder.class
 Services\UserService.class
+Services\LoginService.class
